@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-2"
 }
 
 
@@ -36,7 +36,7 @@ module "eks_workers" {
   # Makesure to check the Latest EKS AMI according to AWS Region
   image_id                           = "ami-07be7092831897fd6"
   cluster_name                       = "cloudelligent-dev-eks-cluster"
-  key_name                           = "vault"
+  key_name                           = "LekeAWSKeyPair"
   cluster_endpoint                   = module.eks_cluster.eks_cluster_endpoint
   cluster_certificate_authority_data = module.eks_cluster.eks_cluster_certificate_authority_data
   cluster_security_group_id          = module.eks_cluster.security_group_id
